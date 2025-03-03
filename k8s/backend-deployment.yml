@@ -18,3 +18,9 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 5000
+        env:
+        - name: GREETING_MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: simple-app-config
+              key: GREETING_MESSAGE
